@@ -35,7 +35,7 @@ function EquipTool()
     game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.EquipTool:FireServer(unpack(args))
 end
 
-     if _G.Auto_Farm then
+     if getgenv().Auto_Farm then
     fuckMonster = RunService.Stepped:Connect(function()
      for i, v in pairs(game.Workspace:GetChildren()) do
      if v:FindFirstChild("Health") and v:FindFirstChild("IsSeaMonster") then
@@ -64,7 +64,7 @@ end
           teleport(CFrame.new(1.8703980445862, 53.57190322876, -188.37982177734))
         end
 
-while _G.Auto_Sell do wait()
+while getgenv().Auto_Sell do wait()
 game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.processGameItemSold:InvokeServer("SellEverything")
 end
 
