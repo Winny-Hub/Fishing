@@ -68,7 +68,8 @@ while getgenv().Auto_Sell do wait()
 game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.processGameItemSold:InvokeServer("SellEverything")
 end
 
-repeat wait() until game:IsLoaded() 
-    game:GetService("Players").LocalPlayer.Idled:connect(function()
-    game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+local VirtualUser=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+	VirtualUser:CaptureController()
+	VirtualUser:ClickButton2(Vector2.new())
 end)
